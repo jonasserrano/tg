@@ -4149,7 +4149,7 @@ void print_date_full (struct in_ev *ev, long t) {
 }
 
 void print_msg_id (struct in_ev *ev, tgl_message_id_t msg_id, struct tgl_message *M) {
-  if (msg_num_mode || M->media.type != tgl_message_media_none) {
+  if (msg_num_mode || (M  && M->media.type != tgl_message_media_none)) {
     if (!permanent_msg_id_mode) {
       if (M) {
         mprintf (ev, "%d", M->temp_id);
