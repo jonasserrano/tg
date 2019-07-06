@@ -317,6 +317,7 @@ void net_loop (void) {
   event_add (term_ev, 0);
   
   int last_get_state = time (0);
+  tgl_do_update_contact_list(TLS, NULL, NULL); // Get list of contacts at init
   while (1) {
     event_base_loop (TLS->ev_base, EVLOOP_ONCE);
 
